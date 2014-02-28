@@ -139,12 +139,33 @@ var app = {
 			.openOn(map);
 			
 			//app.speakToMe("You clicked the map at " + e.latlng.toString());
+			
+			
+				// bar code scanner???
+		
+			// demo the scan
+			console.log('about to scan');
+			try {
+				var scanned = app.scan();
+				console.log('scan triggered', scanned);
+			} catch (e) {
+				console.log('scan failed');
+				console.log(JSON.stringify(e));
+				console.log('that sucks... reloading in 10');
+				setTimeout(function() {
+					console.log('reloading now...');
+					app.onDeviceReady();
+				}, 10000);
+			}
+		
 		}
 		
 		map.on('click', onMapClick);
 
 		app.displayCurrentPosition();
 
+		
+	
     },
 
     displayCurrentPosition: function() {
@@ -189,7 +210,28 @@ var app = {
 	console.log('TTS: Done.');
 
 	return u;
+    },
+	
+	
+	scan: function() {
+        console.log('scan(): init');
+        // documentation said the syntax was this:
+        // var scanner = window.PhoneGap.require("cordova/plugin/BarcodeScanner");
+        // but playing with options, seems like it should be this:
+        var scanner = window.cordova.require("cordova/plugin/BarcodeScanner");
+        scanner.scan(
+                function (result) {
+                    alert("We got a barcode\n" +
+                        "Result: " + result.text + "\n" +
+                        "Format: " + result.format + "\n" +
+                        "Cancelled: " + result.cancelled);
+                },
+                function (error) {
+                    alert("Scanning failed: " + error);
+                }
+                );
     }
+	
 };
 
 	
