@@ -182,7 +182,7 @@ var app = {
 	u = new SpeechSynthesisUtterance();
 	u.text = mess;
 	u.lang = 'en-GB';
-	u.rate = 1.2;
+	u.rate = 1.0;
 
 	console.log('TTS: Away to perform speak');
 	speechSynthesis.speak(u);
