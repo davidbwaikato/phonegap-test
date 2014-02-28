@@ -90,19 +90,19 @@ var app = {
 		var map = this._map;
 
 		// On line map
-
+/*
 		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 18
 		}).addTo(map);
-
+*/
 
 
 		//L.tileLayer(rootFullPath + 'tipple-store/geodata/MapQuest/{z}/{x}/{y}.png', {
-		/*	
+			
 		L.tileLayer('img/MapQuest/{z}/{x}/{y}.png', {
 			maxZoom: 18
 		}).addTo(map);
-	*/
+	
 
 
 		var uni_message= "The University of Waikato (... in Maaori: Te far-eh Waananga o Waikato), is a comprehensive university in Hamilton, New Zealand, with a satellite campus located in Tauranga. Established in 1964, it was the first university in New Zealand to be designed from a blank canvas.\n\n Waikato is made up of seven faculties and schools, and had more than 12,500 students enrolled at the end of 2012.";
