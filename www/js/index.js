@@ -138,9 +138,9 @@ var app = {
 			.setContent("You clicked the map at " + e.latlng.toString())
 			.openOn(map);
 			
-			//app.speakToMe("You clicked the map at " + e.latlng.toString());
+			app.speakToMe("You clicked the map at " + e.latlng.toString());
 			
-			
+			/*
 				// bar code scanner???
 		
 			// demo the scan
@@ -157,6 +157,7 @@ var app = {
 					app.onDeviceReady();
 				}, 10000);
 			}
+			*/
 		
 		}
 		
